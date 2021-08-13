@@ -14,7 +14,7 @@ namespace ChefsNDishes.Models
     public string Description { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
-
+    public int ChefId { get; set; }
     public Chef DishChef { get; set; }
   }
 }

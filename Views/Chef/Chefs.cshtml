@@ -10,7 +10,7 @@
                 <th># of Dishes</th>
             </thead>
                 @foreach (var chef in Model)
-                {       
+                {
                     <tr>
                         <td>@chef.FirstName @chef.LastName</td>
                         <td>@chef.Birthday</td>
@@ -21,11 +21,11 @@
                             }    
                             else
                             {
-                                @chef.CreatedDishes.Count()
+                                @chef.CreatedDishes.Count();
                             }
                         </td>
                     </tr>
-                } 
+                }
         </table>
     </div>
 </div>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ChefsNDishes.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ChefsNDishes.Controllers
 {
@@ -13,8 +14,6 @@ namespace ChefsNDishes.Controllers
         {
             db = context;
         }
-
-        [HttpGet("")]
         public IActionResult Index()
         {
           return RedirectToAction("All");
@@ -24,7 +23,9 @@ namespace ChefsNDishes.Controllers
         [HttpGet("/dish/new")]
         public IActionResult New()
         {
-            return View("AddDish");
+          List<Chef> allChefs = db.Chefs.ToList();
+          ViewBag.allChefs = allChefs;
+          return View("AddDish"); 
         }
 
         // 2. handles POST request form submission to CREATE a new Post model instance
@@ -33,11 +34,10 @@ namespace ChefsNDishes.Controllers
         {
             // Every time a form is submitted, check the validations.
             if (ModelState.IsValid == false)
-            {
+            { 
                 // Go back to the form so error messages are displayed.
                 return RedirectToAction("New");
             }
-
             // The above return did not happen so ModelState IS valid.
             db.Dishes.Add(newDish);
             // db doesn't update until we run save changes
