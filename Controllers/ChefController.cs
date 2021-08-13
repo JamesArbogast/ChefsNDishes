@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ChefsNDishes.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ChefsNDishes.Controllers
 {
@@ -17,7 +18,7 @@ namespace ChefsNDishes.Controllers
         [HttpGet("")]
         public IActionResult Index()
         {
-          return RedirectToAction("All");
+            return RedirectToAction("All");
         }
 
         // 1. handles GET request to DISPLAY the form used to create a new Post
@@ -49,7 +50,9 @@ namespace ChefsNDishes.Controllers
         [HttpGet("/chefs")]
         public IActionResult All()
         {
-            List<Chef> allChefs = db.Chefs.ToList();
+            List<Chef> allChefs = db.Chefs
+            .Include(chefs => chefs.CreatedDishes)
+            .ToList();
             return View("Chefs", allChefs);
         }
 

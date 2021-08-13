@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ChefsNDishes.Migrations
 {
-    public partial class chefsDB : Migration
+    public partial class chefDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -37,23 +37,23 @@ namespace ChefsNDishes.Migrations
                     Description = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    DishChefChefId = table.Column<int>(type: "int", nullable: true)
+                    ChefId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Dishes", x => x.DishId);
                     table.ForeignKey(
-                        name: "FK_Dishes_Chefs_DishChefChefId",
-                        column: x => x.DishChefChefId,
+                        name: "FK_Dishes_Chefs_ChefId",
+                        column: x => x.ChefId,
                         principalTable: "Chefs",
                         principalColumn: "ChefId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Dishes_DishChefChefId",
+                name: "IX_Dishes_ChefId",
                 table: "Dishes",
-                column: "DishChefChefId");
+                column: "ChefId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

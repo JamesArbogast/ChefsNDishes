@@ -13,7 +13,14 @@
                 {
                     <tr>
                         <td>@chef.FirstName @chef.LastName</td>
-                        <td>@chef.Birthday</td>
+                        <td>
+                            @{
+                                int today = int.Parse(DateTime.Now.ToString("yyyyMMdd"));
+                                int birthday = int.Parse(@chef.Birthday.ToString("yyyyMMdd"));
+                                int age = (today-birthday) / 10000;
+                            }
+                            @age
+                        </td>
                         <td>
                             @if(chef.CreatedDishes == null)
                             {

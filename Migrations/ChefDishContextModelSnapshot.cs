@@ -52,14 +52,14 @@ namespace ChefsNDishes.Migrations
                     b.Property<int>("Calories")
                         .HasColumnType("int");
 
+                    b.Property<int>("ChefId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Description")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<int?>("DishChefChefId")
-                        .HasColumnType("int");
 
                     b.Property<string>("DishName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
@@ -72,7 +72,7 @@ namespace ChefsNDishes.Migrations
 
                     b.HasKey("DishId");
 
-                    b.HasIndex("DishChefChefId");
+                    b.HasIndex("ChefId");
 
                     b.ToTable("Dishes");
                 });
@@ -81,7 +81,9 @@ namespace ChefsNDishes.Migrations
                 {
                     b.HasOne("ChefsNDishes.Models.Chef", "DishChef")
                         .WithMany("CreatedDishes")
-                        .HasForeignKey("DishChefChefId");
+                        .HasForeignKey("ChefId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("DishChef");
                 });

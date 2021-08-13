@@ -16,16 +16,16 @@ namespace ChefsNDishes.Controllers
         }
         public IActionResult Index()
         {
-          return RedirectToAction("All");
+            return RedirectToAction("All");
         }
 
         // 1. handles GET request to DISPLAY the form used to create a new Post
         [HttpGet("/dish/new")]
         public IActionResult New()
         {
-          List<Chef> allChefs = db.Chefs.ToList();
-          ViewBag.allChefs = allChefs;
-          return View("AddDish"); 
+            List<Chef> allChefs = db.Chefs.ToList();
+            ViewBag.allChefs = allChefs;
+            return View("AddDish"); 
         }
 
         // 2. handles POST request form submission to CREATE a new Post model instance
@@ -49,7 +49,9 @@ namespace ChefsNDishes.Controllers
         [HttpGet("/dishes")]
         public IActionResult All()
         {
-            List<Dish> allDishes = db.Dishes.ToList();
+            List<Dish> allDishes = db.Dishes
+            .Include(dish => dish.DishChef)
+            .ToList();
             return View("Dishes", allDishes);
         }
 
