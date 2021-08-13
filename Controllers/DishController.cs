@@ -49,8 +49,8 @@ namespace ChefsNDishes.Controllers
         [HttpGet("/dishes")]
         public IActionResult All()
         {
-            List<Dish> allDishs = db.Dishes.ToList();
-            return View("Dishes", allDishs);
+            List<Dish> allDishes = db.Dishes.ToList();
+            return View("Dishes", allDishes);
         }
 
         [HttpGet("/dishes/{dishId}")]

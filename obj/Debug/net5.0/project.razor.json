@@ -15639,13 +15639,18 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\james\\OneDrive\\Desktop\\coding_dojo\\CSharp\\ChefsNDishes\\Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FilePath": "c:\\Users\\james\\OneDrive\\Desktop\\coding_dojo\\CSharp\\ChefsNDishes\\Views\\Dish\\Dishes.cshtml",
+      "TargetPath": "Views\\Dish\\Dishes.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\james\\OneDrive\\Desktop\\coding_dojo\\CSharp\\ChefsNDishes\\Views\\Chef\\Dishes.cshtml",
-      "TargetPath": "Views\\Chef\\Dishes.cshtml",
+      "FilePath": "c:\\Users\\james\\OneDrive\\Desktop\\coding_dojo\\CSharp\\ChefsNDishes\\Views\\Dish\\AddDish.cshtml",
+      "TargetPath": "Views\\Dish\\AddDish.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\james\\OneDrive\\Desktop\\coding_dojo\\CSharp\\ChefsNDishes\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -49,3 +49,5 @@ C:\Users\james\OneDrive\Desktop\coding_dojo\CSharp\ChefsNDishes\bin\Debug\net5.0
 C:\Users\james\OneDrive\Desktop\coding_dojo\CSharp\ChefsNDishes\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\james\OneDrive\Desktop\coding_dojo\CSharp\ChefsNDishes\obj\Debug\net5.0\Razor\Views\Chef\Chefs.cshtml.g.cs
 C:\Users\james\OneDrive\Desktop\coding_dojo\CSharp\ChefsNDishes\obj\Debug\net5.0\Razor\Views\Chef\AddChef.cshtml.g.cs
+C:\Users\james\OneDrive\Desktop\coding_dojo\CSharp\ChefsNDishes\obj\Debug\net5.0\Razor\Views\Dish\AddDish.cshtml.g.cs
+C:\Users\james\OneDrive\Desktop\coding_dojo\CSharp\ChefsNDishes\obj\Debug\net5.0\Razor\Views\Dish\Dishes.cshtml.g.cs
